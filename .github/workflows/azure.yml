@@ -42,6 +42,9 @@ jobs:
         run: npm run build
         env:
           NITRO_PRESET: azure-functions
+          BUNNY_ACCESS_KEY: ${{ secrets.BUNNY_ACCESS_KEY }}
+          BUNNY_ZONE: ${{ secrets.BUNNY_ZONE }}
+          BUNNY_HOSTNAME: ${{ secrets.BUNNY_HOSTNAME }}
 
       - name: "Deploy to Azure Functions"
         uses: Azure/functions-action@v1
